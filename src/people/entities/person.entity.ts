@@ -1,22 +1,31 @@
-import { Column, Entity, PrimaryColumn } from "typeorm";
+import { BeforeInsert, Column, Entity, Index, PrimaryColumn } from "typeorm";
 
-@Entity()
-export class Person {
+@Entity('people')
+export class Person {   
+
     @PrimaryColumn()
     _id: string;
 
     @Column()
     picture: string;
 
-    @Column()
-    birthday: Date;
+    @Index({ fulltext: true })
+    @Column("varchar")
+    birthday: string;
 
-    @Column()
+    @Index({ fulltext: true })
+    @Column("varchar")
     name: string;
 
-    @Column()
+    @Index({ fulltext: true })
+    @Column("varchar")
     address: string;
 
-    @Column()
+    @Index({ fulltext: true })
+    @Column("varchar")
     phone_number: string;
+
+    @Index({ fulltext: true })
+    @Column("varchar")
+    age: string;
 }

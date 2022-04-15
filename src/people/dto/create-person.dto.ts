@@ -1,4 +1,4 @@
-import { IsDate, IsDefined, IsString } from "class-validator";
+import { IsDefined, IsString } from "class-validator";
 
 export class CreatePersonDto {
     @IsDefined()
@@ -10,7 +10,7 @@ export class CreatePersonDto {
     picture: string;
 
     @IsDefined()
-    @IsDate()
+    @IsString()
     birthday: Date;
 
     @IsString()

@@ -1,4 +1,4 @@
-import { BeforeInsert, Column, Entity, Index, PrimaryColumn } from "typeorm";
+import { Column, Entity, PrimaryColumn } from "typeorm";
 
 @Entity('people')
 export class Person {   
@@ -6,26 +6,21 @@ export class Person {
     @PrimaryColumn()
     _id: string;
 
-    @Column()
+    @Column("varchar")
     picture: string;
 
-    @Index({ fulltext: true })
     @Column("varchar")
     birthday: string;
 
-    @Index({ fulltext: true })
     @Column("varchar")
     name: string;
 
-    @Index({ fulltext: true })
     @Column("varchar")
     address: string;
 
-    @Index({ fulltext: true })
     @Column("varchar")
     phone_number: string;
 
-    @Index({ fulltext: true })
     @Column("varchar")
     age: string;
 }

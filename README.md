@@ -28,8 +28,8 @@ $ npm run start
 ### Option 1 - As container
 
 ```bash
-# Step 1 - copy '.env.example' file with '.env' file name
-$ cp .env.example .env 
+# Step 1 - copy '.env.docker' file with '.env' file name
+$ cp .env.docker .env 
 
 # Step 2 - build and run
 $ docker-compose up --build

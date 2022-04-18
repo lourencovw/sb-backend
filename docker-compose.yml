@@ -1,0 +1,24 @@
+version: '3.8'
+services: 
+  mysqldb:
+    image: mysql:8.0
+    env_file: ./.env.docker
+    security_opt:
+      - seccomp:unconfined
+    environment:
+      MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
+      MYSQL_DATABASE: $MYSQL_DATABASE
+    ports:
+      - $MYSQL_LOCAL_PORT:$MYSQL_DOCKER_PORT
+  app:
+    env_file: ./.env.docker
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: node-mysql-app
+    depends_on:
+      - mysqldb
+    ports:
+      - 5000:5000
+    stdin_open: true
+    tty: true

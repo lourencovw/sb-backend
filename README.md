@@ -31,6 +31,6 @@ $ npm run start
 # Step 1 - copy '.env.example' file with '.env' file name
 $ cp .env.example .env 
 
-# Step 2 - build and run
+# Step 2 - run migrations and seeds, build, and run the app on dev mode
 $ docker-compose up --build
 ```

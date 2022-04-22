@@ -1,9 +1,3 @@
-## Installation
-
-```bash
-$ npm install
-```
-
 ## Running the app
 
 ### Option 1 - Locally
